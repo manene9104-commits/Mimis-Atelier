@@ -2,9 +2,95 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mimi's Atelier - Bookings</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
+<header>
+    <h1>Mimi's Atelier</h1>
+    <p>Premium Cultural & Modern Fashion Heritage — Awka, Anambra State</p>
+</header>
+
+<nav>
+    <a href="index.html">Home & Board</a>
+    <a href="showcase.html">Product Showcase</a>
+    <a href="appointments.html" class="active">Inquiries & Bookings</a>
+    <a href="events.html">Upcoming Events</a>
+    <a href="dom.html">DOM Structure</a>
+</nav>
+
+<div class="marquee-container">
+    <marquee behavior="scroll" direction="left">✨ Special Notice: Mimi's Atelier is standardizing vibrant styling updates for the upcoming Anambra Fashion Week in Onitsha! Book your custom fitting slot today. ✨</marquee>
+</div>
+
+<main>
+    <section>
+        <h2>Schedule a Fitting & Consultation</h2>
+        <p style="text-align: center; margin-bottom: 25px;">Visit our studio flagships in Awka or setup digital dimensions assessments.</p>
+
+        <form id="bookingForm">
+            <div class="form-group">
+                <label for="fullName">Full Name</label>
+                <input type="text" id="fullName" required placeholder="e.g. Chinelo Obi">
+            </div>
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" required placeholder="name@example.com">
+            </div>
+            <div class="form-group">
+                <label for="service">Service Type</label>
+                <select id="service">
+                    <option value="Bespoke Traditional Asoebi">Bespoke Traditional Asoebi Bridal Wear</option>
+                    <option value="Ready-to-Wear Contemporary">Ready-to-Wear Contemporary Suitings</option>
+                    <option value="Fashion Consultation">General Corporate Branding Styling Evaluation</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="date">Desired Appointment Date</label>
+                <input type="date" id="date" required>
+            </div>
+            <div class="form-group">
+                <label for="notes">Inquiry / Design Notes</label>
+                <textarea id="notes" rows="4" placeholder="Share descriptions of sizes, material styles, or preferred native fabrics..."></textarea>
+            </div>
+            <button type="submit">Submit Appointment Details</button>
+        </form>
+
+        <!-- Dynamic Confirmation Area -->
+        <div id="formFeedback" style="margin-top: 25px; display: none; background: #e2f0d9; padding: 20px; border-radius: 5px; border-left: 5px solid #385723;"></div>
+    </section>
+</main>
+
+<footer>
+    <p>&copy; 2026 Mimi's Atelier. All Rights Reserved. Designed for CSC 106/IFT 203 Tutor-Marked Assessment.</p>
+</footer>
+
+<!-- JavaScript Form Handling Feature -->
+<script>
+    document.getElementById('bookingForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        const name = document.getElementById('fullName').value;
+        const email = document.getElementById('email').value;
+        const service = document.getElementById('service').value;
+        const date = document.getElementById('date').value;
+        const feedback = document.getElementById('formFeedback');
+
+        feedback.innerHTML = `
+                <h3>Dalu, ${name}!</h3>
+                <p>Your luxury session inquiry has been registered successfully.</p>
+                <ul>
+                    <li><strong>Selected Package:</strong> ${service}</li>
+                    <li><strong>Reserved Date Window:</strong> ${date}</li>
+                    <li><strong>Contact Channel:</strong> ${email}</li>
+                </ul>
+                <p style="margin-top:10px; font-size: 0.85rem; color:#555;">An expert stylist from our Anambra corporate branch will correspond via message channels within 1 hour.</p>
+            `;
+        feedback.style.display = 'block';
+        this.reset();
+    });
+</script>
 </body>
 </html>
