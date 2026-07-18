@@ -2,9 +2,90 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mimi's Atelier - Home</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
+<header>
+    <h1>Mimi's Atelier</h1>
+    <p>Premium Cultural & Modern Fashion Heritage — Awka, Anambra State</p>
+</header>
+
+<nav>
+    <a href="index.html" class="active">Home & Board</a>
+    <a href="showcase.html">Product Showcase</a>
+    <a href="appointments.html">Inquiries & Bookings</a>
+    <a href="events.html">Upcoming Events</a>
+    <a href="dom.html">DOM Structure</a>
+</nav>
+
+<div class="marquee-container">
+    <marquee behavior="scroll" direction="left">✨ Special Notice: Mimi's Atelier is standardizing vibrant styling updates for the upcoming Anambra Fashion Week in Onitsha! Book your custom fitting slot today. ✨</marquee>
+</div>
+
+<main>
+    <!-- JavaScript Dynamic Feature Target -->
+    <div id="welcome-banner" style="background: #4a1525; color: white; padding: 15px; border-radius: 5px; text-align: center; margin-bottom: 25px; font-weight: bold;"></div>
+
+    <section>
+        <h2>Welcome to Mimi's Atelier</h2>
+        <p>Rooted in the rich cultural landscapes of Anambra, Nigeria, Mimi's Atelier merges traditional Igbo aesthetics, intricate local beadwork, and clean contemporary silhouettes. From breathtaking custom Asoebi designs to majestic modern corporate and casual wears, we dress you to make bold assertions of elegance.</p>
+    </section>
+
+    <!-- Board of Trustees Feature Requirement -->
+    <section>
+        <h2>Board of Trustees</h2>
+        <p style="margin-bottom: 20px; color: #666;">Meet the visionary leadership team steering structural innovation and creative excellence at Mimi's Atelier.</p>
+
+        <div class="grid-container">
+            <!-- Chairperson Reference -->
+            <div class="card">
+                <img src="https://unsplash.com" alt="Anene Mmesoma">
+                <h3>Anene Mmesoma</h3>
+                <p style="color: #d4af37; font-weight: bold;">Chairperson, Board of Trustees</p>
+                <p>Strategic Advisor & Creative Overseer spearheading our regional identity.</p>
+            </div>
+
+            <!-- User Picture Placeholder Reference -->
+            <div class="card">
+                <img src="my-profile,jpg" alt="Creative Director Profile Picture">
+                <h3>Creative Director (You)</h3>
+                <p style="color: #666; font-weight: 500;">Group Member / Trustee</p>
+                <p>Managing direct structural execution and interface deployment.</p>
+            </div>
+
+            <div class="card">
+                <img src="https://unsplash.com" alt="Trustee Development">
+                <h3>Chidi Okafor</h3>
+                <p style="color: #666; font-weight: 500;">Financial Trustee</p>
+                <p>Overseeing local textile sourcing networks within the market hubs of Onitsha.</p>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <p>&copy; 2026 Mimi's Atelier. All Rights Reserved. Designed for CSC 106/IFT 203 Tutor-Marked Assessment.</p>
+</footer>
+
+<!-- JavaScript Feature Execution -->
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const banner = document.getElementById("welcome-banner");
+        const hour = new Date().getHours();
+        let greeting;
+
+        if (hour < 12) {
+            greeting = "Ututu oma! Good morning and welcome to Mimi's Atelier, Anambra's finest.";
+        } else if (hour < 17) {
+            greeting = "Ehihie oma! Good afternoon! Explore our local luxury statement designs.";
+        } else {
+            greeting = "Mgbede oma! Good evening! Planning for an elite look? Contact our Awka studios.";
+        }
+        banner.textContent = greeting;
+    });
+</script>
 </body>
 </html>
