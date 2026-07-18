@@ -43,7 +43,8 @@ nav {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 15px; /* Spacing between brand name and vertical links */
+    gap: 20px; /* Spacing between brand name and vertical links */
+    margin-bottom: 20px;
 }
 
 /* Brand Name above navigation menu links */
@@ -62,10 +63,10 @@ nav::before {
 }
 
 nav a {
-    color: #fff;
+    color: #333;
     text-decoration: none;
     padding: 8px 24px;
-    font-weight: 600;
+    font-weight: bold;
     transition: all 0.3s ease;
     width: 100%;
     max-width: 260px; /* Constraints link width for structured stacking */
