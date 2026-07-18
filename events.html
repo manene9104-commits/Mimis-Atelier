@@ -2,9 +2,88 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mimi's Atelier - Events</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
+<header>
+    <h1>Mimi's Atelier</h1>
+    <p>Premium Cultural & Modern Fashion Heritage — Awka, Anambra State</p>
+</header>
+
+<nav>
+    <a href="index.html">Home & Board</a>
+    <a href="showcase.html">Product Showcase</a>
+    <a href="appointments.html">Inquiries & Bookings</a>
+    <a href="events.html" class="active">Upcoming Events</a>
+    <a href="dom.html">DOM Structure</a>
+</nav>
+
+<div class="marquee-container">
+    <marquee behavior="scroll" direction="left">✨ Special Notice: Mimi's Atelier is standardizing vibrant styling updates for the upcoming Anambra Fashion Week in Onitsha! Book your custom fitting slot today. ✨</marquee>
+</div>
+
+<main>
+    <section>
+        <h2>Anambra Fashion Events Schedule</h2>
+        <p style="margin-bottom: 25px;">Track our exhibitions and runway schedules across key commercial zones in Nigeria.</p>
+
+        <div class="grid-container">
+            <div class="card" style="text-align: left;">
+                <h3>Anambra Runway Fashion Week</h3>
+                <p><strong>Location:</strong> Marble Arch Hotels Event Arena, Awka</p>
+                <p><strong>Date:</strong> October 12, 2026</p>
+                <p>Witness Mimi's Atelier premiere our luxury fusion collection live on the central state runway stage.</p>
+                <div style="margin-top: 15px;">
+                    <button onclick="claimSeat('Awka Showcase')">Claim Access Seat Pass</button>
+                    <span id="seatCount-Awka" style="margin-left: 10px; font-weight: bold; color: #4a1525;">Remaining Passes: 45</span>
+                </div>
+            </div>
+
+            <div class="card" style="text-align: left;">
+                <h3>The Onitsha Commercial Textile Gala</h3>
+                <p><strong>Location:</strong> Main Main Line Exhibition Hall, Onitsha</p>
+                <p><strong>Date:</strong> November 28, 2026</p>
+                <p>An interactive marketplace display presenting curated patterns made with high grade fabrics.</p>
+                <div style="margin-top: 15px;">
+                    <button onclick="claimSeat('Onitsha Gala')">Claim Access Seat Pass</button>
+                    <span id="seatCount-Onitsha" style="margin-left: 10px; font-weight: bold; color: #4a1525;">Remaining Passes: 30</span>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <p>&copy; 2026 Mimi's Atelier. All Rights Reserved. Designed for CSC 106/IFT 203 Tutor-Marked Assessment.</p>
+</footer>
+
+<!-- JavaScript Interactive RSVP Counter feature -->
+<script>
+    let awkaSeats = 45;
+    let onitshaSeats = 30;
+
+    function claimSeat(eventName) {
+        if (eventName.includes('Awka')) {
+            if (awkaSeats > 0) {
+                awkaSeats--;
+                document.getElementById('seatCount-Awka').textContent = `Remaining Passes: ${awkaSeats}`;
+                alert(`Seat confirmed for the ${eventName}! Pass details sent to registration.`);
+            } else {
+                alert("Event fully loaded!");
+            }
+        } else {
+            if (onitshaSeats > 0) {
+                onitshaSeats--;
+                document.getElementById('seatCount-Onitsha').textContent = `Remaining Passes: ${onitshaSeats}`;
+                alert(`Seat confirmed for the ${eventName}! Pass details sent to registration.`);
+            } else {
+                alert("Event fully loaded!");
+            }
+        }
+    }
+</script>
 </body>
 </html>
