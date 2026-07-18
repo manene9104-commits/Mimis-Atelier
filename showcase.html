@@ -2,9 +2,88 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mimi's Atelier - Product Showcase</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
+<header>
+    <h1>Mimi's Atelier</h1>
+    <p>Premium Cultural & Modern Fashion Heritage — Awka, Anambra State</p>
+</header>
+
+<nav>
+    <a href="index.html">Home & Board</a>
+    <a href="showcase.html" class="active">Product Showcase</a>
+    <a href="appointments.html">Inquiries & Bookings</a>
+    <a href="events.html">Upcoming Events</a>
+    <a href="dom.html">DOM Structure</a>
+</nav>
+
+<div class="marquee-container">
+    <marquee behavior="scroll" direction="left">✨ Special Notice: Mimi's Atelier is standardizing vibrant styling updates for the upcoming Anambra Fashion Week in Onitsha! Book your custom fitting slot today. ✨</marquee>
+</div>
+
+<main>
+    <section>
+        <h2>Our Signature Collection</h2>
+
+        <!-- JavaScript Dynamic Filter Control -->
+        <div style="text-align: center; margin-bottom: 30px;">
+            <button onclick="filterCollection('all')" style="margin: 5px;">Show All</button>
+            <button onclick="filterCollection('traditional')" style="margin: 5px;">Traditional Attire</button>
+            <button onclick="filterCollection('contemporary')" style="margin: 5px;">Contemporary Pieces</button>
+        </div>
+
+        <div class="grid-container">
+            <div class="card" data-category="traditional">
+                <img src="https://unsplash.com" alt="Anambra Royal Lace">
+                <h3>The Royal Isiagu Blend</h3>
+                <p style="font-weight: bold; color: #4a1525;">Traditional Collection</p>
+                <p>Premium modern tailored interpretation of classic cultural motifs for prestigious ceremonies.</p>
+            </div>
+
+            <div class="card" data-category="traditional">
+                <img src="https://unsplash.com" alt="Luxury Coral George Gown">
+                <h3>Luxury Coral Lace</h3>
+                <p style="font-weight: bold; color: #4a1525;">Traditional Collection</p>
+                <p>Stunning customized native ensembles accessorized perfectly for luxury bridal parties.</p>
+            </div>
+
+            <div class="card" data-category="contemporary">
+                <img src="https://unsplash.com" alt="Ankara Cocktail Dress">
+                <h3>Awka Sunset Cocktail Dress</h3>
+                <p style="font-weight: bold; color: #4a1525;">Contemporary Collection</p>
+                <p>Clean asymmetric western silhouettes cut cleanly with vibrant hand-dyed local prints.</p>
+            </div>
+
+            <div class="card" data-category="contemporary">
+                <img src="https://unsplash.com" alt="Executive Smart Set">
+                <h3>Executive Couture Blazer</h3>
+                <p style="font-weight: bold; color: #4a1525;">Contemporary Collection</p>
+                <p>Sharp structures crafted for corporate leaders commanding presence in business meetings.</p>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <p>&copy; 2026 Mimi's Atelier. All Rights Reserved. Designed for CSC 106/IFT 203 Tutor-Marked Assessment.</p>
+</footer>
+
+<!-- JavaScript Filter Function -->
+<script>
+    function filterCollection(category) {
+        const cards = document.querySelectorAll('.card');
+        cards.forEach(card => {
+            if(category === 'all' || card.getAttribute('data-category') === category) {
+                card.style.display = 'block';
+            } else {
+                card.style.display = 'none';
+            }
+        });
+    }
+</script>
 </body>
 </html>
