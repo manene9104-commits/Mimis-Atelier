@@ -2,7 +2,7 @@
 * {
     margin: 0;
     padding: 0;
-    box-box-sizing: border-box;
+    box-sizing: border-box; /* Fixed typo from box-box-sizing */
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
@@ -10,77 +10,115 @@ body {
     background-color: #fcf8f5;
     color: #333;
     line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Keeps footer at the bottom of short pages */
 }
 
 /* Header and Navigation */
 header {
     background-color: #4a1525;
     color: #fff;
-    padding: 20px 0;
+    padding: 30px 20px;
     text-align: center;
 }
 
 header h1 {
-    font-size: 2.5rem;
+    font-size: 2.8rem;
     letter-spacing: 2px;
+    margin-bottom: 5px;
 }
 
 header p {
     font-style: italic;
     color: #d4af37;
+    font-size: 1.1rem;
 }
 
+/* Vertically Stacked & Centered Navigation */
 nav {
     background-color: #2b0c15;
+    padding: 25px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px; /* Spacing between brand name and vertical links */
+}
+
+/* Brand Name above navigation menu links */
+nav::before {
+    content: "Mimi's Atelier Navigation";
+    color: #d4af37;
+    font-size: 1.2rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+    padding-bottom: 8px;
+    width: 100%;
+    max-width: 300px;
     text-align: center;
-    padding: 10px 0;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
 }
 
 nav a {
     color: #fff;
     text-decoration: none;
-    padding: 10px 20px;
-    margin: 0 5px;
+    padding: 8px 24px;
     font-weight: 600;
-    transition: color 0.3s;
+    transition: all 0.3s ease;
+    width: 100%;
+    max-width: 260px; /* Constraints link width for structured stacking */
+    text-align: center;
+    border-radius: 4px;
 }
 
 nav a:hover, nav a.active {
-    color: #d4af37;
+    color: #2b0c15;
+    background-color: #d4af37; /* Clean highlight effect for vertical menus */
 }
 
 /* Global Announcement Marquee */
 .marquee-container {
     background-color: #d4af37;
     color: #2b0c15;
-    padding: 8px 0;
+    padding: 10px 0;
     font-weight: bold;
     overflow: hidden;
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.15);
 }
 
 /* Main Layout Structure */
 main {
-    max-width: 1200px;
-    margin: 30px auto;
+    max-width: 1000px; /* Narrowed down down from 1200px for a more balanced layout */
+    width: 100%;
+    margin: 40px auto;
     padding: 0 20px;
+    flex: 1; /* Pushes content down to fill screen space */
 }
 
 section {
     background: #fff;
-    padding: 30px;
-    margin-bottom: 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    padding: 40px;
+    margin-bottom: 35px;
+    border-radius: 12px; /* Smoother modern corners */
+    box-shadow: 0 10px 25px rgba(74, 21, 37, 0.05); /* Soft premium shadow tinted with your primary color */
+    text-align: center; /* Centers paragraphs and introductory copy */
 }
 
 h2 {
     color: #4a1525;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
     border-bottom: 2px solid #d4af37;
-    padding-bottom: 5px;
+    padding-bottom: 10px;
+    font-size: 1.8rem;
+    display: inline-block; /* Wraps border tightly around title text */
+    width: auto;
+}
+
+section p {
+    max-width: 750px;
+    margin: 0 auto 20px; /* Centers standard paragraph text boxes */
 }
 
 /* Footer */
@@ -88,74 +126,96 @@ footer {
     background-color: #2b0c15;
     color: #fff;
     text-align: center;
-    padding: 15px 0;
+    padding: 20px 20px;
     font-size: 0.9rem;
-    margin-top: 50px;
+    margin-top: auto; /* Locks footer to screen base */
+    border-top: 4px solid #4a1525;
 }
 
 /* Page Specific Component Layouts */
 .grid-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 25px;
+    gap: 30px;
+    margin-top: 25px;
 }
 
 .card {
     background: #fff;
-    border: 1px solid #eee;
-    border-radius: 8px;
+    border: 1px solid #f1eae6;
+    border-radius: 10px;
     overflow: hidden;
     text-align: center;
-    padding: 15px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(74, 21, 37, 0.08);
 }
 
 .card img {
     width: 100%;
-    height: 350px;
+    height: 320px;
     object-fit: cover;
-    border-radius: 6px;
+    border-radius: 8px;
 }
 
 .card h3 {
-    margin: 15px 0 5px;
+    margin: 15px 0 8px;
     color: #4a1525;
+    font-size: 1.3rem;
 }
 
 /* Forms */
 form {
     display: flex;
     flex-direction: column;
-    max-width: 600px;
-    margin: 0 auto;
+    max-width: 550px;
+    margin: 20px auto 0;
+    text-align: left; /* Keeps inputs readable */
 }
 
 .form-group {
-    margin-bottom: 15px;
+    margin-bottom: 20px;
 }
 
 label {
     display: block;
-    margin-bottom: 5px;
+    margin-bottom: 8px;
     font-weight: 600;
+    color: #4a1525;
 }
 
 input, select, textarea {
     width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+    padding: 12px;
+    border: 1px solid #dcd1cc;
+    border-radius: 6px;
+    background-color: #fff;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+input:focus, select:focus, textarea:focus {
+    outline: none;
+    border-color: #4a1525;
+    box-shadow: 0 0 0 3px rgba(74, 21, 37, 0.1);
 }
 
 button {
     background-color: #4a1525;
     color: white;
-    padding: 12px;
+    padding: 14px;
     border: none;
-    border-radius: 4px;
+    border-radius: 6px;
     font-weight: bold;
+    font-size: 1rem;
     cursor: pointer;
     transition: background 0.3s;
+    margin-top: 10px;
 }
 
 button:hover {
@@ -166,9 +226,17 @@ button:hover {
 .dom-node {
     margin-left: 20px;
     border-left: 2px dashed #4a1525;
-    padding-left: 10px;
+    padding-left: 15px;
     font-family: monospace;
     color: #555;
+    text-align: left; /* Tree lines stay left-aligned */
 }
-.dom-tag { color: #a52a2a; font-weight: bold; }
-.dom-class { color: #0000ff; }
+
+.dom-tag {
+    color: #a52a2a;
+    font-weight: bold;
+}
+
+.dom-class {
+    color: #0000ff;
+}
