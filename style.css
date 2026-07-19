@@ -1,88 +1,197 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mimi's Atelier - Home</title>
-    <style>
-        /* Basic clean layout styles */
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            padding: 20px;
-            color: #333;
-        }
-        nav {
-            margin: 15px 0;
-        }
-        nav a {
-            margin-right: 15px;
-            text-decoration: none;
-            color: #0066cc;
-        }
-        nav a:hover {
-            text-decoration: underline;
-        }
-        .notice-banner {
-            background-color: #f9f9f9;
-            border-left: 4px solid #ffcc00;
-            padding: 10px;
-            margin: 15px 0;
-            overflow: hidden;
-            white-space: nowrap;
-            text-overflow: ellipsis;
-        }
-        .greeting-box {
-            background-color: #4a1525;
-            color: #ffffff;
-            padding: 15px;
-            border-radius: 5px;
-            text-align: center;
-            font-style: italic;
-            margin: 15px 0;
-        }
-        footer {
-            margin-top: 40px;
-            padding-top: 15px;
-            border-top: 1px solid #ddd;
-            font-size: 0.9em;
-            color: #666;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta
+    name="description"
+    content="Mimi's Atelier offers premium cultural and modern fashion designs in Awka, Anambra State."
+  >
+  <title>Mimi's Atelier | Cultural & Modern Fashion</title>
+
+  <style>
+    :root {
+      --wine: #4a1525;
+      --gold: #d49b12;
+      --cream: #fffaf5;
+      --text: #2f2a2c;
+      --muted: #6b6265;
+      --border: #e8dfe2;
+      --link: #8b1e3f;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      color: var(--text);
+      background: var(--cream);
+    }
+
+    .container {
+      width: min(1100px, 92%);
+      margin: 0 auto;
+    }
+
+    .skip-link {
+      position: absolute;
+      left: -9999px;
+    }
+
+    .skip-link:focus {
+      left: 1rem;
+      top: 1rem;
+      z-index: 10;
+      padding: 0.7rem 1rem;
+      color: #fff;
+      background: var(--wine);
+      border-radius: 4px;
+    }
+
+    header {
+      padding: 2.5rem 0 1.5rem;
+      text-align: center;
+    }
+
+    h1 {
+      margin: 0;
+      color: var(--wine);
+      font-size: clamp(2rem, 5vw, 3.2rem);
+    }
+
+    .tagline {
+      margin: 0.5rem 0 0;
+      color: var(--muted);
+      font-weight: 700;
+    }
+
+    nav {
+      background: var(--wine);
+    }
+
+    .nav-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.25rem;
+      margin: 0;
+      padding: 0.65rem 0;
+      list-style: none;
+    }
+
+    nav a {
+      display: block;
+      padding: 0.65rem 0.9rem;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 4px;
+    }
+
+    nav a:hover,
+    nav a:focus-visible {
+      color: var(--wine);
+      background: #fff;
+      outline: 2px solid var(--gold);
+      outline-offset: 2px;
+    }
+
+    .notice-banner {
+      margin: 1.5rem 0;
+      padding: 1rem;
+      background: #fff4d6;
+      border-left: 5px solid var(--gold);
+      border-radius: 4px;
+    }
+
+    .greeting-box {
+      margin: 1.5rem 0;
+      padding: 1.25rem;
+      color: #fff;
+      background: var(--wine);
+      border-radius: 8px;
+      text-align: center;
+      font-style: italic;
+      box-shadow: 0 4px 12px rgb(74 21 37 / 15%);
+    }
+
+    main {
+      padding: 1rem 0 2rem;
+    }
+
+    main h2 {
+      color: var(--wine);
+      font-size: 1.8rem;
+    }
+
+    footer {
+      padding: 1.25rem 0;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      text-align: center;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 600px) {
+      .nav-list {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 0.5rem;
+      }
+
+      nav a {
+        text-align: center;
+      }
+    }
+  </style>
 </head>
+
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
 
-    <header>
-        <h1>Mimi's Atelier</h1>
-        <p><strong>Premium Cultural & Modern Fashion Heritage — Awka, Anambra State</strong></p>
-    </header>
+  <header class="container">
+    <h1>Mimi's Atelier</h1>
+    <p class="tagline">Premium Cultural &amp; Modern Fashion Heritage — Awka, Anambra State</p>
+  </header>
 
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="#">Board of Trustees</a>
-        <a href="#">Product Showcase</a>
-        <a href="#">Inquiries & Bookings</a>
-        <a href="#">Upcoming Events</a>
-        <a href="#">DOM Structure</a>
-    </nav>
-
-    <div class="notice-banner">
-        ✨ Special Notice: Mimi's Atelier is standardizing vibrant styling updates for the upcoming Anambra Fashion Week in Onitsha! Book your custom fitting slot today. ✨
+  <nav aria-label="Primary navigation">
+    <div class="container">
+      <ul class="nav-list">
+        <li><a href="index.html" aria-current="page">Home</a></li>
+        <li><a href="board-of-trustees.html">Board of Trustees</a></li>
+        <li><a href="products.html">Product Showcase</a></li>
+        <li><a href="bookings.html">Inquiries &amp; Bookings</a></li>
+        <li><a href="events.html">Upcoming Events</a></li>
+        <li><a href="dom-structure.html">DOM Structure</a></li>
+      </ul>
     </div>
+  </nav>
 
-    <div class="greeting-box">
-        Ehihie oma! Good afternoon! Explore our local luxury statement designs.
-    </div>
+  <main id="main-content" class="container">
+    <section class="notice-banner" aria-label="Special notice">
+      ✨ <strong>Special Notice:</strong> Mimi's Atelier is preparing vibrant styling updates for the upcoming Anambra Fashion Week in Onitsha. Book your custom fitting slot today. ✨
+    </section>
 
-    <main>
-        <h2>Welcome to Mimi's Atelier</h2>
-        <p>Rooted in the rich cultural landscapes of Anambra, Nigeria, Mimi's Atelier merges traditional Igbo aesthetics, intricate local beadwork, and clean contemporary silhouettes. From breathtaking custom Asoebi designs to majestic modern corporate and casual wears, we dress you to make bold assertions of elegance.</p>
-    </main>
+    <section class="greeting-box">
+      Ehihie ọma! Good afternoon! Explore our local luxury statement designs.
+    </section>
 
-    <footer>
-        <p>&copy; 2026 Mimi's Atelier. All Rights Reserved.</p>
-    </footer>
+    <section>
+      <h2>Welcome to Mimi's Atelier</h2>
+      <p>
+        Rooted in the rich cultural landscapes of Anambra, Nigeria, Mimi's Atelier
+        merges traditional Igbo aesthetics, intricate local beadwork, and clean
+        contemporary silhouettes. From breathtaking custom Asoebi designs to modern
+        corporate and casual wear, we dress you to make bold assertions of elegance.
+      </p>
+    </section>
+  </main>
 
+  <footer class="container">
+    <p>&copy; 2026 Mimi's Atelier. All rights reserved.</p>
+  </footer>
 </body>
 </html>
